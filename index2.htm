@@ -1,0 +1,50 @@
+<!--Tarea 1, Felipe Haase Vargas, 14632640, IIC1005, PUC-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Informacion General </title>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css">
+  <script src='mapas.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+</head>
+
+<body>
+
+
+<div id="banner">
+<h1>Informacion general</h1>
+</div>
+
+<div class='todo'>	
+	<a href='index.htm'><div id='pest'>Info general</div></a>
+	<a href='index2.htm'><div id='pest'>Amigos</div></a>
+<div class='tabla'>
+
+	<div class='info'>
+		<form>
+		<select id='usuario'>
+				<option value='760'>Usuario1</option>
+				<option value='5087'>Usuario2</option>
+				<option value='7919'>Usuario4</option>
+		</select>
+				<input type='month' id='F1'>Hasta</input>
+				<input type='month' id='F2'></input>
+				<input type='button' value="Enviar" onclick='form1()'></input>
+		</form>
+	</div>
+
+	<div id='map'></div>
+	<script>
+	L.mapbox.accessToken = 'pk.eyJ1IjoiZmVsaXBlaHYiLCJhIjoiV0dBQThWRSJ9.dU62553L2a107zwaYu0XKQ';
+	// Extraído de Mapbox.com, developers, mapa de ejemplo
+	var map = L.mapbox.map('map', 'felipehv.lhe8d70i')
+    .setView([-33.499310, -70.615064], 15);
+	</script>
+
+</div>
+</div>
+
+</body>
+
+</html>

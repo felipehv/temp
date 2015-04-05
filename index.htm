@@ -1,0 +1,57 @@
+<!--Tarea 1, Felipe Haase Vargas, 14632640, IIC1005, PUC-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Informacion General </title>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css">
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+  <script src='mapas.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+</head>
+
+<body>
+<div id="banner">
+<h1>Informacion general</h1>
+</div>
+
+<div class='todo'>
+
+	<a href='index.htm'><div id='pest'>Info general</div></a>
+	<a href='index2.htm'><div id='pest'>Amigos</div></a>
+
+	<div class='tabla'>
+		
+		<div class='info'>
+			<p>Usuarios: 121323</p>
+			<p>Usuarios: 11326</p>
+			<p>Ubicaciones: 187218</p>
+			<p>Lugares por usuario: 16.52993113190888</p>
+			<p>Cantidad de check-ins: 2290997</p>
+			<p>Checkins por lugar:  12.237055197683983</p>
+		</div>
+
+		<div id='map'>
+		</div>
+
+	</div>
+	<script>
+	L.mapbox.accessToken = 'pk.eyJ1IjoiZmVsaXBlaHYiLCJhIjoiV0dBQThWRSJ9.dU62553L2a107zwaYu0XKQ';
+	// Extraído de Mapbox.com, developers, mapa de ejemplo
+	var map = L.mapbox.map('map', 'felipehv.lhe8d70i')
+	.setView([-33.499310, -70.615064], 15);
+	var posiciones = omnivore.csv('azar.csv').addTo(map);
+	var posicion = L.marker([0,0]).addTo(map);
+	var puc = L.marker([-33.499310, -70.615064]).addTo(map);
+	</script>
+
+</div>
+<form></form>
+<input type='button' onclick='UnirChecks([-33.499310, -70.615064],[0,0],"red")' value='Unir San Joaquin con la mitad del mundo'>
+</form>
+
+</body>
+
+</html>
+
+

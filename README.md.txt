@@ -1,0 +1,1 @@
+*En el archivo json se cambio check-ins por checkins para evitar problemas
