@@ -9,9 +9,9 @@ import random
 friends = []
 h = open('foursquare_friendship.csv')
 friends = h.readlines()
+friends = friends[1:]
 for i in range(len(friends)):
 	friends[i] = friends[i].strip().split(',')[0]
-	print(friends)
 cantidad_amigos = []
 aux = friends[0]
 contador = 0
@@ -22,21 +22,19 @@ for friend in friends:
 		aux = friend
 		cantidad_amigos.append(contador)
 		contador = 0
-print(cantidad_amigos)
 suma = 0
 for can in cantidad_amigos:
 	suma += can
 
-print(suma)
 cantidadpromedio = suma/len(cantidad_amigos)
-print(cantidadpromedio)
+print('Amigos promedio',cantidadpromedio)
 		
 
 
 #########################################
 
 ### Lista de checkins
-a = open('foursquare_checkins.csv','r')
+a = open('foursquare_checkins.csv','r') ## Suponiendo foursquare_checkins.csv esta en la misma carpeta!
 b = a.readlines()
 
 checks = []
