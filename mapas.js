@@ -2,7 +2,8 @@ function agregar_coordenadas(x,y,z){
 	var posicion = L.marker([x,y]).addTo(map);
 }
 
-var colores = ['red','black','lightblue','pink','green','purple','red','black','lightblue','pink','green','purple']
+var colores = ['red','black','lightblue','pink','green',
+'purple','red','black','lightblue','pink','green','purple','red','black','lightblue','pink','green','purple']
 
 var user;
 var fecha1;
@@ -94,15 +95,13 @@ function addPoint(x,y){
         x[1] = x[1] + 1;
         x[0] = pendiente*x[1] + y[0] - pendiente*y[1];
         polyline.addLatLng(L.latLng(x, y));
-        map.setView([0, x[1]], 3);
-        window.setTimeout(addPoint(x,y), 100);
+        addPoint(x,y);
     }
     else if(y[1] < x[1]){
         x[1] = x[1] - 1;
         x[0] = pendiente*x[1] + y[0] - pendiente*y[1];
         polyline.addLatLng(L.latLng(x, y));
-        map.setView([0, x[1]], 3);
-        window.setTimeout(addPoint(x,y), 100);
+        addPoint(x,y);
     }
 }
 
@@ -113,4 +112,5 @@ function UnirChecks(x,y,z){
     pendiente = (y[0]-x[0])/(y[1]-x[1]);
     polyline.addLatLng(L.latLng(x, y));
     addPoint(x,y);
+    map.setView([0, 0], 1);
     }

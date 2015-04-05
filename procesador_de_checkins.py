@@ -11,6 +11,7 @@ h = open('foursquare_friendship.csv')
 friends = h.readlines()
 for i in range(len(friends)):
 	friends[i] = friends[i].strip().split(',')[0]
+	print(friends)
 cantidad_amigos = []
 aux = friends[0]
 contador = 0
