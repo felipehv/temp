@@ -27,4 +27,8 @@ msg = "\r\n".join(['From:'+
   '',
   msg1
   ])
-enviar_correo(msg)
+#enviar_correo(msg)
+
+with open('holi.txt','w') as a:
+	a.writelines(msg)
+	a.close()
