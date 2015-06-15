@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.4
 # -*- coding: utf-8 -*-
 ### BEGIN LICENSE
 #Copyright (c) 2009 Eugene Kaznacheev <qetzal@gmail.com>
