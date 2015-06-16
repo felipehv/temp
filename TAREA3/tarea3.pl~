@@ -1,0 +1,21 @@
+s(0).
+natural(0).
+natural(s(X)) :- natural(X).
+aDecimal(0,0).
+aDecimal(s(X),Y) :- aDecimal(X,Z), Y is Z+1.
+suma_l([X],X).
+suma_l([X|Y],S) :- suma_l(Y,Ss), suma(X,Ss,S).
+
+suma(0,X,X).
+suma(s(X),Y,s(Z)) :- suma(X,Y,Z).
+
+multiplicacion(0,X,0).
+multiplicacion(s(X),Y,R) :- multiplicacion(X,Y,Z),suma(Z,Y,R).
+
+menor(X,Y) :- aDecimal(X,H), aDecimal(Y,P), H<P.
+
+divisor(X,Y) :- natural(X),natural(Y),menor(Y,X),aDecimal(X,H), aDecimal(Y,P), P>0, Z is H mod P, Z=0.
+
+divisors(X,Y) :- menor(0,Y), menor(Z,s(X)), multiplicacion(Y,Z,X).
+
+abundantes(X) :-  findall(Y, divisors(X,Y),L) , suma_l(L,R), menor(X,R).
