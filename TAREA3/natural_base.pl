@@ -42,7 +42,7 @@ entender(O,continuar) :-
     Consulta = es_adj_que(Adj,Clase),
     findall(Clase,Consulta,L),
     (L\=[]->
-    pretty_print(L),write(' son '),write(Adj),pretty_print(L),write('.'),nl;
+    pretty_print(P),write(' es '),write(Adj),pretty_print(K),write('.'),nl;
     write('no se que es '),write(X),write('.'),nl).
 
 entender(O,continuar) :-
