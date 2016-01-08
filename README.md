@@ -1,3 +1,1 @@
-# fahaase
-Los archivos de foursquare y json deben estar en la misma carpeta para que funcione.
-# fahaase
+# Repositorio IIC1005 : "Computacion: Ciencia y Tecnologia para un mundo digital"
